@@ -1,0 +1,70 @@
+--- 
+title: "Big Ten PLays"
+author: "Ben Reitman"
+date: '2023-10-05'
+format:
+  html:
+    code-fold: true
+---
+
+```{r}
+library(tidyverse)
+
+```
+```{r}
+logs22<-read_csv("https://dwillis.github.io/sports-data-files/footballlogs22.csv")
+logs23<-read_csv("https://dwillis.github.io/sports-data-files/footballlogs23.csv")
+
+
+```
+
+## Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.
+
+```{r}
+BigTen22<-logs22 %>% 
+  group_by(Conference, Team) %>% 
+  summarise(TotalPlays = sum(OffensivePlays)) %>% 
+  filter(Conference == "Big Ten Conference")
+
+```
+
+
+## I am dividing the total number of plays by 13 because that is the number of games that most teams play per season. 
+```{r}
+Averages<-BigTen22 %>% 
+  mutate(mean = TotalPlays/13)
+
+
+```
+  
+  
+## Here is the bar chart for 2022 plays.
+```{r}
+ggplot()+
+  geom_bar(
+    data=Averages,
+    aes(x=Team, weight=mean)
+  )
+```
+```{r}
+BigTen23<-logs23 %>% 
+  group_by(Conference, Team) %>% 
+  summarise(TotalPlays = sum(OffensivePlays)) %>% 
+  filter(Conference == "Big Ten Conference")
+```
+
+## I am dividing this time by 6 because that is the number of games a majority of teams have played.
+```{r}
+Averages23<-BigTen23 %>% 
+  mutate(mean = TotalPlays/6)
+```
+
+```{r}
+ggplot()+
+  geom_bar(
+    data=Averages23,
+    aes(x=Team, weight=mean))
+```
+## Immediately, one of the things that stands out to me is that Maryland's bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules. 
+  
+  
