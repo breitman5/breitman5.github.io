@@ -1,0 +1,106 @@
+--- 
+title: "Volleyball Aces"
+author: "Ben Reitman"
+date: '2023-10-26'
+format:
+  html:
+    code-fold: true
+---
+
+
+
+```{r}
+library(tidyverse)
+library(ggbeeswarm)
+library(ggrepel)
+set.seed(1234)
+```
+
+
+
+
+```{r}
+logs<-read_csv("https://raw.githubusercontent.com/dwillis/NCAAWomensVolleyballData/main/data/ncaa_womens_volleyball_playerstats_2023.csv")
+```
+```{r}
+logs <- logs %>% 
+  filter(mp>20) %>% 
+  filter(!is.na(aces), !is.na(pos))
+```
+## Here I am changing the dataframe to only include players who have played in 20 or more matches.
+
+
+```{r}
+logs<-logs %>% 
+  mutate(
+    acespermatch = aces/mp
+  )
+```
+
+## Now I am making a new column that determines how many aces a player has per match
+
+```{r}
+logs %>% 
+  summary(acespermatch)
+```
+## Now I am getting a summary for acespermatch and determining where I want my filter to be (which will be above the third quartile).
+
+
+```{r}
+logs <- logs |> filter(acespermatch > .9545)
+```
+## Changing the dataframe to only include players who have a acespermatch number of above the third quartile
+
+```{r}
+ggplot() + geom_beeswarm(data=logs, aes(x=pos, y=acespermatch), color="grey")
+```
+## Here is the chart with every player on it with an acespermatch of above .9545.
+
+
+```{r}
+umd <- logs |> 
+  filter(team == "Maryland Terrapins, Terps") |> 
+  filter(acespermatch>.9545) |> 
+  arrange(desc(acespermatch))
+```
+## Filtering to Maryland
+
+```{r}
+ggplot() + 
+  geom_beeswarm(
+    data=logs, 
+    groupOnX=TRUE, 
+    aes(x=pos, y=acespermatch), color="grey") + 
+  geom_beeswarm(
+    data=umd, 
+    groupOnX=TRUE, 
+    aes(x=pos, y=acespermatch), color="red")
+```
+```{r}
+ggplot() + 
+  geom_beeswarm(
+    data=logs, 
+    groupOnX=TRUE, 
+    aes(x=pos, y=acespermatch), color="grey") + 
+  geom_beeswarm(
+    data=umd, 
+    groupOnX=TRUE, 
+    aes(x=pos, y=acespermatch), color="red") +
+  geom_text_repel(
+    data=umd, 
+    aes(x=pos, y=acespermatch, label=full_name))+
+  labs(title = "Three Terps average an Ace per Match", subtitle = "But how does that compare to the rest of the country?", caption = "Source: NCAA | By Ben Reitman")
+       
+```
+## The final product shows the three Maryland players that have played in at least 20 matches for the Terps and have an acespermatch of at least .9545. Each of the three Terps have an acespermatches of at least 1, but come in on the lower side of the chart. Camryn Hawthorne of Indiana has so far this season averaged an amazing 2.2 aces per match in 24 matches played. 
+
+
+
+
+
+
+
+
+
+
+
