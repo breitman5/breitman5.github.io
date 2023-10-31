@@ -1,24 +1,227 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "JOUR479X copy/about.html",
+    "href": "JOUR479X copy/about.html",
     "title": "About",
     "section": "",
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html",
+    "href": "JOUR479X copy/posts/third-and-six/index.html",
+    "title": "Third and Six",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nlibrary(cfbfastR)"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "title": "Third and Six",
+    "section": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.",
+    "text": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.\n\n\nCode\nplay_type_count %&gt;% \n  mutate(total = sum(count)) %&gt;% \n  mutate(percent = (count/total) *100) %&gt;% \n  arrange(desc(percent))\n\n\n# A tibble: 19 × 4\n   play_type                            count total  percent\n   &lt;chr&gt;                                &lt;int&gt; &lt;int&gt;    &lt;dbl&gt;\n 1 Pass Reception                        3596 12001 30.0    \n 2 Pass Incompletion                     2956 12001 24.6    \n 3 Rush                                  2420 12001 20.2    \n 4 Penalty                                828 12001  6.90   \n 5 Timeout                                694 12001  5.78   \n 6 Sack                                   631 12001  5.26   \n 7 Passing Touchdown                      392 12001  3.27   \n 8 Interception Return                    188 12001  1.57   \n 9 Rushing Touchdown                      102 12001  0.850  \n10 Fumble Recovery (Opponent)              85 12001  0.708  \n11 Fumble Recovery (Own)                   56 12001  0.467  \n12 Interception Return Touchdown           26 12001  0.217  \n13 Field Goal Good                         13 12001  0.108  \n14 Field Goal Missed                        4 12001  0.0333 \n15 Fumble Return Touchdown                  3 12001  0.0250 \n16 Punt                                     3 12001  0.0250 \n17 Safety                                   2 12001  0.0167 \n18 Blocked Field Goal                       1 12001  0.00833\n19 Fumble Recovery (Opponent) Touchdown     1 12001  0.00833"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "title": "Third and Six",
+    "section": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.",
+    "text": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.\n\n\nCode\nrushing_plays &lt;- third_and_six %&gt;% \n  filter(down == 3, distance == 6, play_type == \"Rush\") %&gt;% \n  mutate(mean(yards_gained))"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "title": "Third and Six",
+    "section": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.",
+    "text": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.\n\n\nCode\nrushing2019&lt;-rushing_plays %&gt;%  \n  filter(year == '2019')\n\nrushing2020&lt;-rushing_plays %&gt;%  \n  filter(year == '2020')\n\nrushing2021&lt;-rushing_plays %&gt;%  \n  filter(year == '2021')\n\nrushing2022&lt;-rushing_plays %&gt;%  \n  filter(year == '2022')\n\nrushing2023&lt;-rushing_plays %&gt;%  \n  filter(year == '2023')"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "title": "Third and Six",
+    "section": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.",
+    "text": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.\n\n\nCode\nrushing2019 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 151 × 2\n   pos_team         count\n   &lt;chr&gt;            &lt;int&gt;\n 1 Georgia Southern    13\n 2 Navy                12\n 3 Northwestern        11\n 4 Nebraska            10\n 5 Buffalo              8\n 6 Louisiana            8\n 7 Army                 7\n 8 Notre Dame           7\n 9 Oklahoma State       7\n10 Old Dominion         7\n# ℹ 141 more rows\n\n\nCode\nrushing2020 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 115 × 2\n   pos_team             count\n   &lt;chr&gt;                &lt;int&gt;\n 1 Navy                    12\n 2 Georgia Southern         7\n 3 Army                     6\n 4 Kansas                   6\n 5 Air Force                5\n 6 Liberty                  5\n 7 Memphis                  5\n 8 Southern Mississippi     5\n 9 Western Kentucky         5\n10 Arkansas                 4\n# ℹ 105 more rows\n\n\nCode\nrushing2021 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 147 × 2\n   pos_team   count\n   &lt;chr&gt;      &lt;int&gt;\n 1 Army          16\n 2 Baylor        13\n 3 Arkansas      10\n 4 Louisiana     10\n 5 Air Force      9\n 6 Kent State     9\n 7 Navy           9\n 8 New Mexico     9\n 9 Rice           9\n10 Utah State     8\n# ℹ 137 more rows\n\n\nCode\nrushing2022 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 237 × 2\n   pos_team           count\n   &lt;chr&gt;              &lt;int&gt;\n 1 Navy                  13\n 2 Kennesaw State        12\n 3 The Citadel           10\n 4 Army                   9\n 5 William & Mary         9\n 6 Auburn                 8\n 7 Duke                   8\n 8 Florida State          8\n 9 South Dakota State     8\n10 UNLV                   8\n# ℹ 227 more rows\n\n\nCode\nrushing2023 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 193 × 2\n   pos_team       count\n   &lt;chr&gt;          &lt;int&gt;\n 1 South Florida      8\n 2 West Virginia      7\n 3 Air Force          6\n 4 Boston College     6\n 5 UAB                6\n 6 Army               5\n 7 Cal Poly           5\n 8 Prairie View       5\n 9 Utah               5\n10 Bowling Green      4\n# ℹ 183 more rows"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "title": "Third and Six",
+    "section": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.",
+    "text": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.\n\n\nCode\nMaryland &lt;- third_and_six %&gt;% \n  filter(pos_team == \"Maryland\")\n\n\n\n\nCode\nMaryland %&gt;% \n  group_by(play_type) %&gt;% \n  summarise(count=n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 10 × 2\n   play_type                  count\n   &lt;chr&gt;                      &lt;int&gt;\n 1 Rush                          15\n 2 Pass Reception                13\n 3 Pass Incompletion             11\n 4 Passing Touchdown              4\n 5 Sack                           4\n 6 Fumble Recovery (Opponent)     2\n 7 Penalty                        2\n 8 Timeout                        2\n 9 Interception Return            1\n10 Rushing Touchdown              1"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "href": "JOUR479X copy/posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "title": "Third and Six",
+    "section": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well.",
+    "text": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well."
+  },
+  {
+    "objectID": "JOUR479X copy/posts/welcome/index.html",
+    "href": "JOUR479X copy/posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
+    "objectID": "JOUR479X copy/posts/post-with-code/index.html",
+    "href": "JOUR479X copy/posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "breitman5.github.io/index.html",
+    "href": "breitman5.github.io/index.html",
+    "title": "Big Ten PLays",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nCode\nlogs22&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs22.csv\")\n\n\nRows: 1672 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nCode\nlogs23&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs23.csv\")\n\n\nRows: 970 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "breitman5.github.io/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "href": "breitman5.github.io/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "title": "Big Ten PLays",
+    "section": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.",
+    "text": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.\n\n\nCode\nBigTen22&lt;-logs22 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "breitman5.github.io/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "href": "breitman5.github.io/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.",
+    "text": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.\n\n\nCode\nAverages&lt;-BigTen22 %&gt;% \n  mutate(mean = TotalPlays/13)"
+  },
+  {
+    "objectID": "breitman5.github.io/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "href": "breitman5.github.io/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "title": "Big Ten PLays",
+    "section": "Here is the bar chart for 2022 plays.",
+    "text": "Here is the bar chart for 2022 plays.\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages,\n    aes(x=Team, weight=mean)\n  )\n\n\n\n\n\n\n\nCode\nBigTen23&lt;-logs23 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "breitman5.github.io/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "href": "breitman5.github.io/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing this time by 6 because that is the number of games a majority of teams have played.",
+    "text": "I am dividing this time by 6 because that is the number of games a majority of teams have played.\n\n\nCode\nAverages23&lt;-BigTen23 %&gt;% \n  mutate(mean = TotalPlays/6)\n\n\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages23,\n    aes(x=Team, weight=mean))"
+  },
+  {
+    "objectID": "breitman5.github.io/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "href": "breitman5.github.io/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "title": "Big Ten PLays",
+    "section": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules.",
+    "text": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules."
+  },
+  {
+    "objectID": "JOUR479X/about.html",
+    "href": "JOUR479X/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html",
+    "href": "JOUR479X/posts/third-and-six/index.html",
+    "title": "Third and Six",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nlibrary(cfbfastR)"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "href": "JOUR479X/posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "title": "Third and Six",
+    "section": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.",
+    "text": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.\n\n\nCode\nplay_type_count %&gt;% \n  mutate(total = sum(count)) %&gt;% \n  mutate(percent = (count/total) *100) %&gt;% \n  arrange(desc(percent))\n\n\n# A tibble: 19 × 4\n   play_type                            count total  percent\n   &lt;chr&gt;                                &lt;int&gt; &lt;int&gt;    &lt;dbl&gt;\n 1 Pass Reception                        3596 12001 30.0    \n 2 Pass Incompletion                     2956 12001 24.6    \n 3 Rush                                  2420 12001 20.2    \n 4 Penalty                                828 12001  6.90   \n 5 Timeout                                694 12001  5.78   \n 6 Sack                                   631 12001  5.26   \n 7 Passing Touchdown                      392 12001  3.27   \n 8 Interception Return                    188 12001  1.57   \n 9 Rushing Touchdown                      102 12001  0.850  \n10 Fumble Recovery (Opponent)              85 12001  0.708  \n11 Fumble Recovery (Own)                   56 12001  0.467  \n12 Interception Return Touchdown           26 12001  0.217  \n13 Field Goal Good                         13 12001  0.108  \n14 Field Goal Missed                        4 12001  0.0333 \n15 Fumble Return Touchdown                  3 12001  0.0250 \n16 Punt                                     3 12001  0.0250 \n17 Safety                                   2 12001  0.0167 \n18 Blocked Field Goal                       1 12001  0.00833\n19 Fumble Recovery (Opponent) Touchdown     1 12001  0.00833"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "href": "JOUR479X/posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "title": "Third and Six",
+    "section": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.",
+    "text": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.\n\n\nCode\nrushing_plays &lt;- third_and_six %&gt;% \n  filter(down == 3, distance == 6, play_type == \"Rush\") %&gt;% \n  mutate(mean(yards_gained))"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "href": "JOUR479X/posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "title": "Third and Six",
+    "section": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.",
+    "text": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.\n\n\nCode\nrushing2019&lt;-rushing_plays %&gt;%  \n  filter(year == '2019')\n\nrushing2020&lt;-rushing_plays %&gt;%  \n  filter(year == '2020')\n\nrushing2021&lt;-rushing_plays %&gt;%  \n  filter(year == '2021')\n\nrushing2022&lt;-rushing_plays %&gt;%  \n  filter(year == '2022')\n\nrushing2023&lt;-rushing_plays %&gt;%  \n  filter(year == '2023')"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "href": "JOUR479X/posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "title": "Third and Six",
+    "section": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.",
+    "text": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.\n\n\nCode\nrushing2019 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 151 × 2\n   pos_team         count\n   &lt;chr&gt;            &lt;int&gt;\n 1 Georgia Southern    13\n 2 Navy                12\n 3 Northwestern        11\n 4 Nebraska            10\n 5 Buffalo              8\n 6 Louisiana            8\n 7 Army                 7\n 8 Notre Dame           7\n 9 Oklahoma State       7\n10 Old Dominion         7\n# ℹ 141 more rows\n\n\nCode\nrushing2020 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 115 × 2\n   pos_team             count\n   &lt;chr&gt;                &lt;int&gt;\n 1 Navy                    12\n 2 Georgia Southern         7\n 3 Army                     6\n 4 Kansas                   6\n 5 Air Force                5\n 6 Liberty                  5\n 7 Memphis                  5\n 8 Southern Mississippi     5\n 9 Western Kentucky         5\n10 Arkansas                 4\n# ℹ 105 more rows\n\n\nCode\nrushing2021 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 147 × 2\n   pos_team   count\n   &lt;chr&gt;      &lt;int&gt;\n 1 Army          16\n 2 Baylor        13\n 3 Arkansas      10\n 4 Louisiana     10\n 5 Air Force      9\n 6 Kent State     9\n 7 Navy           9\n 8 New Mexico     9\n 9 Rice           9\n10 Utah State     8\n# ℹ 137 more rows\n\n\nCode\nrushing2022 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 237 × 2\n   pos_team           count\n   &lt;chr&gt;              &lt;int&gt;\n 1 Navy                  13\n 2 Kennesaw State        12\n 3 The Citadel           10\n 4 Army                   9\n 5 William & Mary         9\n 6 Auburn                 8\n 7 Duke                   8\n 8 Florida State          8\n 9 South Dakota State     8\n10 UNLV                   8\n# ℹ 227 more rows\n\n\nCode\nrushing2023 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 193 × 2\n   pos_team       count\n   &lt;chr&gt;          &lt;int&gt;\n 1 South Florida      8\n 2 West Virginia      7\n 3 Air Force          6\n 4 Boston College     6\n 5 UAB                6\n 6 Army               5\n 7 Cal Poly           5\n 8 Prairie View       5\n 9 Utah               5\n10 Bowling Green      4\n# ℹ 183 more rows"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "href": "JOUR479X/posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "title": "Third and Six",
+    "section": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.",
+    "text": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.\n\n\nCode\nMaryland &lt;- third_and_six %&gt;% \n  filter(pos_team == \"Maryland\")\n\n\n\n\nCode\nMaryland %&gt;% \n  group_by(play_type) %&gt;% \n  summarise(count=n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 10 × 2\n   play_type                  count\n   &lt;chr&gt;                      &lt;int&gt;\n 1 Rush                          15\n 2 Pass Reception                13\n 3 Pass Incompletion             11\n 4 Passing Touchdown              4\n 5 Sack                           4\n 6 Fumble Recovery (Opponent)     2\n 7 Penalty                        2\n 8 Timeout                        2\n 9 Interception Return            1\n10 Rushing Touchdown              1"
+  },
+  {
+    "objectID": "JOUR479X/posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "href": "JOUR479X/posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "title": "Third and Six",
+    "section": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well.",
+    "text": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well."
+  },
+  {
+    "objectID": "JOUR479X/posts/welcome/index.html",
+    "href": "JOUR479X/posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "JOUR479X/posts/post-with-code/index.html",
+    "href": "JOUR479X/posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html",
+    "href": "posts/Big-Ten-Plays/index.html",
+    "title": "Big Ten PLays",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nCode\nlogs22&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs22.csv\")\n\n\nRows: 1672 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nCode\nlogs23&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs23.csv\")\n\n\nRows: 970 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "href": "posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "title": "Big Ten PLays",
+    "section": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.",
+    "text": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.\n\n\nCode\nBigTen22&lt;-logs22 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "href": "posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.",
+    "text": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.\n\n\nCode\nAverages&lt;-BigTen22 %&gt;% \n  mutate(mean = TotalPlays/13)"
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "href": "posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "title": "Big Ten PLays",
+    "section": "Here is the bar chart for 2022 plays.",
+    "text": "Here is the bar chart for 2022 plays.\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages,\n    aes(x=Team, weight=mean)\n  )\n\n\n\n\n\n\n\nCode\nBigTen23&lt;-logs23 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "href": "posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing this time by 6 because that is the number of games a majority of teams have played.",
+    "text": "I am dividing this time by 6 because that is the number of games a majority of teams have played.\n\n\nCode\nAverages23&lt;-BigTen23 %&gt;% \n  mutate(mean = TotalPlays/6)\n\n\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages23,\n    aes(x=Team, weight=mean))"
+  },
+  {
+    "objectID": "posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "href": "posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "title": "Big Ten PLays",
+    "section": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules.",
+    "text": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules."
   },
   {
     "objectID": "posts/hello-world/index.html",
@@ -28,10 +231,192 @@
     "text": "Welcome to this, surely the greatest blog I have ever published, and I have published blogs since 1997.\nI hope the Atlanta Braves win the World Series."
   },
   {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/third-and-six/index.html",
+    "href": "posts/third-and-six/index.html",
+    "title": "Third and Six",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nlibrary(cfbfastR)"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "href": "posts/third-and-six/index.html#of-all-of-the-plays-run-on-3rd-and-6-360-of-them-were-rushing-plays.-in-addition-20-plays-run-on-3rd-and-6-ended-up-in-rushing-touchdowns.",
+    "title": "Third and Six",
+    "section": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.",
+    "text": "Of all of the plays run on 3rd and 6, 360 of them were rushing plays. In addition, 20 plays run on 3rd and 6 ended up in rushing touchdowns.\n\n\nCode\nplay_type_count %&gt;% \n  mutate(total = sum(count)) %&gt;% \n  mutate(percent = (count/total) *100) %&gt;% \n  arrange(desc(percent))\n\n\n# A tibble: 19 × 4\n   play_type                            count total  percent\n   &lt;chr&gt;                                &lt;int&gt; &lt;int&gt;    &lt;dbl&gt;\n 1 Pass Reception                        3596 12001 30.0    \n 2 Pass Incompletion                     2956 12001 24.6    \n 3 Rush                                  2420 12001 20.2    \n 4 Penalty                                828 12001  6.90   \n 5 Timeout                                694 12001  5.78   \n 6 Sack                                   631 12001  5.26   \n 7 Passing Touchdown                      392 12001  3.27   \n 8 Interception Return                    188 12001  1.57   \n 9 Rushing Touchdown                      102 12001  0.850  \n10 Fumble Recovery (Opponent)              85 12001  0.708  \n11 Fumble Recovery (Own)                   56 12001  0.467  \n12 Interception Return Touchdown           26 12001  0.217  \n13 Field Goal Good                         13 12001  0.108  \n14 Field Goal Missed                        4 12001  0.0333 \n15 Fumble Return Touchdown                  3 12001  0.0250 \n16 Punt                                     3 12001  0.0250 \n17 Safety                                   2 12001  0.0167 \n18 Blocked Field Goal                       1 12001  0.00833\n19 Fumble Recovery (Opponent) Touchdown     1 12001  0.00833"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "href": "posts/third-and-six/index.html#of-plays-run-on-third-and-six-were-runs-and-an-additional-1-of-rush-plays-run-on-third-and-six-resulted-in-touchdowns.",
+    "title": "Third and Six",
+    "section": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.",
+    "text": "18% of plays run on third and six were runs and an additional 1% of rush plays run on third and six resulted in touchdowns.\n\n\nCode\nrushing_plays &lt;- third_and_six %&gt;% \n  filter(down == 3, distance == 6, play_type == \"Rush\") %&gt;% \n  mutate(mean(yards_gained))"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "href": "posts/third-and-six/index.html#we-see-that-the-mean-yard-average-of-runs-on-third-down-and-six-on-plays-that-did-not-end-in-touchdowns-is-5.86.",
+    "title": "Third and Six",
+    "section": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.",
+    "text": "We see that the mean yard average of runs on third down and six on plays that did not end in touchdowns is 5.86.\n\n\nCode\nrushing2019&lt;-rushing_plays %&gt;%  \n  filter(year == '2019')\n\nrushing2020&lt;-rushing_plays %&gt;%  \n  filter(year == '2020')\n\nrushing2021&lt;-rushing_plays %&gt;%  \n  filter(year == '2021')\n\nrushing2022&lt;-rushing_plays %&gt;%  \n  filter(year == '2022')\n\nrushing2023&lt;-rushing_plays %&gt;%  \n  filter(year == '2023')"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "href": "posts/third-and-six/index.html#out-of-the-four-most-recent-completed-seasons-and-this-season-so-far-teams-ran-the-ball-on-3rd-and-6-the-most-in-2022-748-times.-this-is-more-than-200-than-the-next-closest-season-which-is-2021.",
+    "title": "Third and Six",
+    "section": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.",
+    "text": "Out of the four most recent completed seasons and this season so far, teams ran the ball on 3rd and 6 the most in 2022, 748 times. This is more than 200 than the next closest season which is 2021.\n\n\nCode\nrushing2019 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 151 × 2\n   pos_team         count\n   &lt;chr&gt;            &lt;int&gt;\n 1 Georgia Southern    13\n 2 Navy                12\n 3 Northwestern        11\n 4 Nebraska            10\n 5 Buffalo              8\n 6 Louisiana            8\n 7 Army                 7\n 8 Notre Dame           7\n 9 Oklahoma State       7\n10 Old Dominion         7\n# ℹ 141 more rows\n\n\nCode\nrushing2020 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 115 × 2\n   pos_team             count\n   &lt;chr&gt;                &lt;int&gt;\n 1 Navy                    12\n 2 Georgia Southern         7\n 3 Army                     6\n 4 Kansas                   6\n 5 Air Force                5\n 6 Liberty                  5\n 7 Memphis                  5\n 8 Southern Mississippi     5\n 9 Western Kentucky         5\n10 Arkansas                 4\n# ℹ 105 more rows\n\n\nCode\nrushing2021 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 147 × 2\n   pos_team   count\n   &lt;chr&gt;      &lt;int&gt;\n 1 Army          16\n 2 Baylor        13\n 3 Arkansas      10\n 4 Louisiana     10\n 5 Air Force      9\n 6 Kent State     9\n 7 Navy           9\n 8 New Mexico     9\n 9 Rice           9\n10 Utah State     8\n# ℹ 137 more rows\n\n\nCode\nrushing2022 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 237 × 2\n   pos_team           count\n   &lt;chr&gt;              &lt;int&gt;\n 1 Navy                  13\n 2 Kennesaw State        12\n 3 The Citadel           10\n 4 Army                   9\n 5 William & Mary         9\n 6 Auburn                 8\n 7 Duke                   8\n 8 Florida State          8\n 9 South Dakota State     8\n10 UNLV                   8\n# ℹ 227 more rows\n\n\nCode\nrushing2023 %&gt;% \n  group_by(pos_team) %&gt;% \n  summarise(count =n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 193 × 2\n   pos_team       count\n   &lt;chr&gt;          &lt;int&gt;\n 1 South Florida      8\n 2 West Virginia      7\n 3 Air Force          6\n 4 Boston College     6\n 5 UAB                6\n 6 Army               5\n 7 Cal Poly           5\n 8 Prairie View       5\n 9 Utah               5\n10 Bowling Green      4\n# ℹ 183 more rows"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "href": "posts/third-and-six/index.html#so-far-this-season-south-florida-has-run-the-ball-on-3rd-and-6-the-most-doing-it-6-times.-in-the-other-four-recent-years-navy-led-the-nation-twice-army-did-it-once-and-georgia-southern-did-it-once.-navy-and-army-both-run-the-triple-option-so-it-makes-a-lot-of-sense-that-they-would-be-at-or-near-the-top-of-these-lists.",
+    "title": "Third and Six",
+    "section": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.",
+    "text": "So far this season, South Florida has run the ball on 3rd and 6 the most doing it 6 times. In the other four recent years, Navy led the nation twice, Army did it once, and Georgia Southern did it once. Navy and Army both run the triple option so it makes a lot of sense that they would be at or near the top of these lists.\n\n\nCode\nMaryland &lt;- third_and_six %&gt;% \n  filter(pos_team == \"Maryland\")\n\n\n\n\nCode\nMaryland %&gt;% \n  group_by(play_type) %&gt;% \n  summarise(count=n()) %&gt;% \n  arrange(desc(count))\n\n\n# A tibble: 10 × 2\n   play_type                  count\n   &lt;chr&gt;                      &lt;int&gt;\n 1 Rush                          15\n 2 Pass Reception                13\n 3 Pass Incompletion             11\n 4 Passing Touchdown              4\n 5 Sack                           4\n 6 Fumble Recovery (Opponent)     2\n 7 Penalty                        2\n 8 Timeout                        2\n 9 Interception Return            1\n10 Rushing Touchdown              1"
+  },
+  {
+    "objectID": "posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "href": "posts/third-and-six/index.html#it-seems-that-the-third-and-six-run-by-maryland-on-saturday-against-illinois-was-not-an-anamoly.-maryland-has-rushed-the-ball-15-times-on-third-and-six-in-the-last-five-seasons.-they-have-thrown-the-ball-24-times-completing-13-of-those-passes.-maryland-has-also-rushed-for-one-touchdown-on-3rd-and-6-in-the-last-five-years-as-well.",
+    "title": "Third and Six",
+    "section": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well.",
+    "text": "It seems that the third and six run by Maryland on Saturday against Illinois was not an anamoly. Maryland has rushed the ball 15 times on third and six in the last five seasons. They have thrown the ball 24 times, completing 13 of those passes. Maryland has also rushed for one touchdown on 3rd and 6 in the last five years as well."
+  },
+  {
+    "objectID": "JOUR479X/posts/hello-world/index.html",
+    "href": "JOUR479X/posts/hello-world/index.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "Welcome to this, surely the greatest blog I have ever published, and I have published blogs since 1997.\nI hope the Atlanta Braves win the World Series."
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html",
+    "title": "Big Ten PLays",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nCode\nlogs22&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs22.csv\")\n\n\nRows: 1672 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nCode\nlogs23&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs23.csv\")\n\n\nRows: 970 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "title": "Big Ten PLays",
+    "section": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.",
+    "text": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.\n\n\nCode\nBigTen22&lt;-logs22 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.",
+    "text": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.\n\n\nCode\nAverages&lt;-BigTen22 %&gt;% \n  mutate(mean = TotalPlays/13)"
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "title": "Big Ten PLays",
+    "section": "Here is the bar chart for 2022 plays.",
+    "text": "Here is the bar chart for 2022 plays.\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages,\n    aes(x=Team, weight=mean)\n  )\n\n\n\n\n\n\n\nCode\nBigTen23&lt;-logs23 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing this time by 6 because that is the number of games a majority of teams have played.",
+    "text": "I am dividing this time by 6 because that is the number of games a majority of teams have played.\n\n\nCode\nAverages23&lt;-BigTen23 %&gt;% \n  mutate(mean = TotalPlays/6)\n\n\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages23,\n    aes(x=Team, weight=mean))"
+  },
+  {
+    "objectID": "JOUR479X/posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "href": "JOUR479X/posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "title": "Big Ten PLays",
+    "section": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules.",
+    "text": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules."
+  },
+  {
+    "objectID": "JOUR479X/index.html",
+    "href": "JOUR479X/index.html",
+    "title": "JOUR479X",
+    "section": "",
+    "text": "Third and Six\n\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nBig Ten PLays\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "JOUR479X",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Third and Six\n\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nThird and Six\n\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nThird and Six\n\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nBig Ten PLays\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nBig Ten PLays\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nBig Ten PLays\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/hello-world/index.html",
+    "href": "JOUR479X copy/posts/hello-world/index.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "Welcome to this, surely the greatest blog I have ever published, and I have published blogs since 1997.\nI hope the Atlanta Braves win the World Series."
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html",
+    "title": "Big Ten PLays",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nCode\nlogs22&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs22.csv\")\n\n\nRows: 1672 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nCode\nlogs23&lt;-read_csv(\"https://dwillis.github.io/sports-data-files/footballlogs23.csv\")\n\n\nRows: 970 Columns: 54\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (8): HomeAway, Opponent, Result, TeamFull, TeamURL, Outcome, Team, Con...\ndbl  (45): Game, PassingCmp, PassingAtt, PassingPct, PassingYds, PassingTD, ...\ndate  (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html#here-i-am-filtering-out-only-the-big-ten-teams-from-the-data-as-well-as-adding-up-the-number-of-offensive-plays-ran-by-big-ten-teams-in-2022.",
+    "title": "Big Ten PLays",
+    "section": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.",
+    "text": "Here, I am filtering out only the Big Ten teams from the data as well as adding up the number of offensive plays ran by Big Ten teams in 2022.\n\n\nCode\nBigTen22&lt;-logs22 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html#i-am-dividing-the-total-number-of-plays-by-13-because-that-is-the-number-of-games-that-most-teams-play-per-season.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.",
+    "text": "I am dividing the total number of plays by 13 because that is the number of games that most teams play per season.\n\n\nCode\nAverages&lt;-BigTen22 %&gt;% \n  mutate(mean = TotalPlays/13)"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html#here-is-the-bar-chart-for-2022-plays.",
+    "title": "Big Ten PLays",
+    "section": "Here is the bar chart for 2022 plays.",
+    "text": "Here is the bar chart for 2022 plays.\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages,\n    aes(x=Team, weight=mean)\n  )\n\n\n\n\n\n\n\nCode\nBigTen23&lt;-logs23 %&gt;% \n  group_by(Conference, Team) %&gt;% \n  summarise(TotalPlays = sum(OffensivePlays)) %&gt;% \n  filter(Conference == \"Big Ten Conference\")\n\n\n`summarise()` has grouped output by 'Conference'. You can override using the\n`.groups` argument."
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html#i-am-dividing-this-time-by-6-because-that-is-the-number-of-games-a-majority-of-teams-have-played.",
+    "title": "Big Ten PLays",
+    "section": "I am dividing this time by 6 because that is the number of games a majority of teams have played.",
+    "text": "I am dividing this time by 6 because that is the number of games a majority of teams have played.\n\n\nCode\nAverages23&lt;-BigTen23 %&gt;% \n  mutate(mean = TotalPlays/6)\n\n\n\n\nCode\nggplot()+\n  geom_bar(\n    data=Averages23,\n    aes(x=Team, weight=mean))"
+  },
+  {
+    "objectID": "JOUR479X copy/posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "href": "JOUR479X copy/posts/Big-Ten-Plays/index.html#immediately-one-of-the-things-that-stands-out-to-me-is-that-marylands-bar-is-higher-than-a-majority-of-the-other-bars-meaning-they-typically-run-more-plays-per-game-than-a-lot-of-big-ten-teams.-maryland-has-had-a-pretty-good-offense-the-last-couple-of-seasons-so-this-makes-sense.-as-a-whole-it-does-appear-that-the-number-of-offensive-plays-run-per-game-is-decreasing.-on-the-2022-chart-the-plays-column-goes-up-to-80-while-it-only-goes-up-to-60-in-2023.-purdue-led-the-conference-in-total-plays-ran-last-season-and-are-leading-again-this-season-but-the-number-of-plays-they-run-per-game-has-dropped-thanks-to-the-new-rules.",
+    "title": "Big Ten PLays",
+    "section": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules.",
+    "text": "Immediately, one of the things that stands out to me is that Maryland’s bar is higher than a majority of the other bars meaning they typically run more plays per game than a lot of Big Ten teams. Maryland has had a pretty good offense the last couple of seasons so this makes sense. AS a whole, it does appear that the number of offensive plays run per game is decreasing. On the 2022 chart, the plays column goes up to 80, while it only goes up to 60 in 2023. Purdue led the conference in total plays ran last season and are leading again this season, but the number of plays they run per game has dropped thanks to the new rules."
+  },
+  {
+    "objectID": "JOUR479X copy/index.html",
+    "href": "JOUR479X copy/index.html",
+    "title": "JOUR479X",
+    "section": "",
+    "text": "Third and Six\n\n\n\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nHello World\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nBig Ten PLays\n\n\n\n\n\n\n\n\n\n\n\n\nOct 5, 2023\n\n\nBen Reitman\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   }
 ]
